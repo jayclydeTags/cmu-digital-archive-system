@@ -21,8 +21,8 @@ class UserTableSeeder extends Seeder
             'email' => 'rmuchief@gmail.com',
             'user_type' => 'Chief',
             'phone_no' => '090909090909',
-            'address' => 'Bukidnon City',
-            'password' => Hash::make('123')
+            'address' => 'Maramag, Bukidnon',
+            'password' => Hash::make('rmuchief_2022'),
         ]);
     }
 }
