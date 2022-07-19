@@ -12,6 +12,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+
 
         <!-- Icons -->
         {{-- <link href="{{asset('assets/js/plugins/nucleo/css/nucleo.css')}}" rel="stylesheet">
@@ -60,7 +62,6 @@
     <script src="{{asset('assets/js/plugins/chart.js/dist/Chart.extension.js')}}"></script>
     <!--   Argon JS   -->
     {{-- <script src="{{asset('assets/js/argon-dashboard.min.js?v=1.1.2')}}"></script> --}}
-
 
     {{-- <script src="{{asset('landingpage/js/core/popper.min.js')}}">
     </script>
