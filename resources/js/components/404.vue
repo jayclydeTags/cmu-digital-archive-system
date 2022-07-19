@@ -1,5 +1,5 @@
 <template>
-<!-- <v-app class="grey lighten-2"> -->
+<v-app class="grey lighten-2">
         <v-container class="my-auto">
             <!-- <v-container>
             <div class="row mt-15">
@@ -44,7 +44,7 @@
             </v-row>
 
         </v-container>
-    <!-- </v-app> -->
+    </v-app>
     <!-- <div class="mt-n1 notfound-container">
         <v-container>
             <div class="row mt-15">
