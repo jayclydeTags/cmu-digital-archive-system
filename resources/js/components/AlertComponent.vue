@@ -5,9 +5,9 @@
                 <div class="errormsg">
                     <v-alert text type="error" colored-border border="left">
                         <v-col class="grow">
-                            <h3 class="text-error text-uppercase">{{ message.status }}</h3>
+                            <h3 class="text-error">{{ message.status }}</h3>
                             <strong>
-                                <h6 class="text-error text-uppercase">
+                                <h6 class="text-error">
                                     {{ message.message.message }}
                                 </h6>
                             </strong>

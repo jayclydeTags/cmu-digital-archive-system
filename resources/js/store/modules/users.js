@@ -40,14 +40,14 @@ const getters = {
 
 // STORE MUTATIONS
 const mutations = {
-    
+
     //GET USER LIST FROM STORE STATE
     GET_USER_LIST:(state,userList) => {
         state.users = userList
     },
 
     //ADD USER TO STORE STATE
-    ADD_USER:(state,payload) => {   
+    ADD_USER:(state,payload) => {
         state.users.push(payload)
     },
 
@@ -87,7 +87,7 @@ const actions = {
             await axios.delete('/api/users/'+user.user_id).then((response) => {
                 commit("DELETE_USER",response.data)
                 rootState.base.global = Object.assign({
-                    message:[{sucess:"Successfully Deleted"}],
+                    message:[{sucess:" User Successfully Deleted"}],
                     status: "Success",
                     showMsg:true
                 })
@@ -113,7 +113,7 @@ const actions = {
             await axios.put('/api/users/'+payload.user_id,payload).then((response) => {
                 commit("UPDATE_USER",response.data)
                 rootState.base.global = Object.assign({
-                    message:[{sucess:"Record Successfully Updated"}],
+                    message:[{sucess:"User Successfully Updated"}],
                     status: "Success",
                     showMsg:true
                 })
@@ -137,7 +137,7 @@ const actions = {
             await axios.put('/api/updatecurrentuser/'+payload.user_id,payload).then((response) => {
                 commit("UPDATE_USER",response.data)
                 rootState.base.global = Object.assign({
-                    message:[{sucess:"Record Successfully Updated"}],
+                    message:[{sucess:"User Successfully Updated"}],
                     status: "Success",
                     showMsg:true
                 })
@@ -163,7 +163,7 @@ const actions = {
                 if(response.status === 201) {
                     commit('ADD_USER',response.data)
                     rootState.base.global = Object.assign({
-                        message:[{sucess:"Record Successfully Added"}],
+                        message:[{sucess:"Uer Successfully Added"}],
                         status: "Success",
                         showMsg:true
                     })
@@ -186,7 +186,7 @@ const actions = {
         }catch(e) {
             console.log(e)
         }
-        
+
     },
 }
 export default {

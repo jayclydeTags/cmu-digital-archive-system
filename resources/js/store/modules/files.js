@@ -218,7 +218,7 @@ const actions = {
 
                 //Notification
                 rootState.base.global = Object.assign({
-                    message: [{ success: "File successfulyy updated" }],
+                    message: [{ success: "Record successfulyy updated" }],
                     status: 'Success',
                     showMsg: true,
                 })
@@ -257,7 +257,7 @@ const actions = {
                 commit("DELETE_FILE", response.data)
                 //Notification
                 rootState.base.global = Object.assign({
-                    message: [{ success: "Document successfulyy deleted" }],
+                    message: [{ success: "Record successfulyy deleted" }],
                     status: 'Success',
                     showMsg: true,
                 })
@@ -292,7 +292,7 @@ const actions = {
 
                 //Notifaction
                 rootState.base.global = Object.assign({
-                    message: [{ sucess: "Request successfully deleted" }],
+                    message: [{ sucess: "Records successfully deleted" }],
                     status: "Success",
                     showMsg: true
                 })
@@ -400,7 +400,7 @@ const actions = {
 
                     //notifacation
                     rootState.base.global = Object.assign({
-                        message: [{ success: "File successfulyy uploaded" }],
+                        message: [{ success: "Atteched file successfulyy uploaded" }],
                         status: 'Success',
                         showMsg: true,
                     })
@@ -463,7 +463,7 @@ const actions = {
 
             //notifacation
             rootState.base.global = Object.assign({
-                message: [{ success: "File successfulyy updated" }],
+                message: [{ success: "Atteched file successfulyy updated" }],
                 status: 'Success',
                 showMsg: true,
             })

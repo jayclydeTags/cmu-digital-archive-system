@@ -133,14 +133,14 @@ const actions = {
 
                  //Notification
                  rootState.base.global = Object.assign({
-                    message: [{ success: "Category successfully updated" }],
+                    message: [{ success: "Category successfully deleted" }],
                     status: 'Success',
                     showMsg: true,
                 })
             }).catch((err) => {
                 console.log(err.response.data)
 
-                
+
                  //Notification
                  rootState.base.global = Object.assign({
                     message: err.response.data,

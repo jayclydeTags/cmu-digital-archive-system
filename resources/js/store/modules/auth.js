@@ -70,7 +70,7 @@ const actions = {
             await axios.put('/api/updatecurrentuser/'+payload.user_id,payload).then((response) => {
                 commit("UPDATE_USER",response.data)
                 rootState.base.global = Object.assign({
-                    message:[{sucess:"Record Successfully Updated"}],
+                    message:[{sucess:"User successfully updated"}],
                     status: "Success",
                     showMsg:true
                 })
@@ -96,7 +96,7 @@ const actions = {
             await axios.put('/api/updatecurrentuserpassword/'+payload.user_id,payload).then((response) => {
                 commit("UPDATE_USER",response.data)
                 rootState.base.global = Object.assign({
-                    message:[{sucess:"Record Successfully Updated"}],
+                    message:[{sucess:"Password successfully updated"}],
                     status: "Success",
                     showMsg:true
                 })
