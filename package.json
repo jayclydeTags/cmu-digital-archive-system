@@ -43,6 +43,7 @@
         "jspdf-autotable": "^3.5.23",
         "jszip": "^3.7.1",
         "jw-vue-pagination": "^1.0.3",
+        "minify-css-string": "^1.0.0",
         "pdfjs-dist": "^2.13.216",
         "pdfmake": "^0.2.4",
         "save": "^2.4.0",

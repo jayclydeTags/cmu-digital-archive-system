@@ -5,6 +5,7 @@ import '@mdi/font/css/materialdesignicons.css'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import minifyTheme from 'minify-css-string'
 
 Vue.use(Vuetify)
 
@@ -27,5 +28,10 @@ export default new Vuetify({
     },
     options: {
         customProperties: true,
+        minifyTheme: (theme) => minifyTheme(theme, { advanced: true }),
+        themeCache: {
+            get: key => localStorage.getItem(key),
+            set: (key, value) => localStorage.setItem(key, value),
+        },
     }
 })
