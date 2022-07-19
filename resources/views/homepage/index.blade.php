@@ -67,7 +67,7 @@
     <!--   Argon JS   -->
     {{-- <script src="{{asset('assets/js/argon-dashboard.min.js?v=1.1.2')}}"></script> --}}
 
-    {{-- <script src="{{asset('landingpage/js/core/popper.min.js')}}">
+    <script src="{{asset('landingpage/js/core/popper.min.js')}}">
     </script>
     <script src="{{asset('landingpage/js/plugins/perfect-scrollbar.jquery.min.js')}}">
     </script>
@@ -79,8 +79,8 @@
     </script>
     <script src="{{asset('landingpage/js/plugins/datetimepicker.js')}}" type="text/javascript">
     </script>
-    <script src="{{asset('landingpage/js/plugins/bootstrap-datepicker.min.js')}}"></script> --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script> --}}
+    <script src="{{asset('landingpage/js/plugins/bootstrap-datepicker.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
     {{-- <script src="{{asset('landingpage/js/argon-design-system.js')}}" type="text/javascript"></script> --}}
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
