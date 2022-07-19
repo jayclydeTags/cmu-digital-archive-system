@@ -54,7 +54,7 @@
 
     <script defer src="{{mix('js/app.js')}}"></script>
     <script src="{{asset('assets/js/plugins/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    {{-- <script src="{{asset('assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script> --}}
     <!--   Optional JS   -->
     <script src="{{asset('assets/js/plugins/chart.js/dist/Chart.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins/chart.js/dist/Chart.extension.js')}}"></script>
@@ -75,7 +75,7 @@
     <script src="{{asset('landingpage/js/plugins/datetimepicker.js')}}" type="text/javascript">
     </script>
     <script src="{{asset('landingpage/js/plugins/bootstrap-datepicker.min.js')}}"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script> --}}
     {{-- <script src="{{asset('landingpage/js/argon-design-system.js')}}" type="text/javascript"></script> --}}
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
