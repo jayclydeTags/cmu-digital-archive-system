@@ -8,10 +8,14 @@
         <title> CMU | Digital Archiving System </title>
         <link href="{{ mix('css/app.css')}}" rel="stylesheet">
         <!-- Favicon -->
-        <link href="{{ asset('assets/img/cmulogo.png')}}" rel="icon" type="image/png">
+        {{-- <link href="{{ asset('/img/cmulogo.png')}}" rel="icon" type="image/png"> --}}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="/site.webmanifest">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> --}}
         <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
 
 
