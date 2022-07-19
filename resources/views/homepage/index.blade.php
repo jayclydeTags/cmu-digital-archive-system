@@ -14,26 +14,26 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
         <!-- Icons -->
-        <link href="{{asset('assets/js/plugins/nucleo/css/nucleo.css')}}" rel="stylesheet">
+        {{-- <link href="{{asset('assets/js/plugins/nucleo/css/nucleo.css')}}" rel="stylesheet">
         <link href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
         <link href="{{asset('assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/css/argon-dashboard.css?v=1.1.2')}}" rel="stylesheet" />
+        <link href="{{asset('assets/css/argon-dashboard.css?v=1.1.2')}}" rel="stylesheet" /> --}}
 
         <!-- Argon CSS -->
 
-        <link type="text/css" href="{{asset('assets/css/argon.min.css')}}" rel="stylesheet">
+        {{-- <link type="text/css" href="{{asset('assets/css/argon.min.css')}}" rel="stylesheet"> --}}
 
         <!-- Landing CSS -->
-        <link href="{{asset('landingpage/css/nucleo-icons.css')}}" rel="stylesheet" />
+        {{-- <link href="{{asset('landingpage/css/nucleo-icons.css')}}" rel="stylesheet" />
         <link href="{{asset('landingpage/css/nucleo-svg.css')}}" rel="stylesheet" />
         <link href="{{asset('landingpage/css/nucleo-svg.css')}}" rel="stylesheet" />
-        <link href="{{asset('landingpage/css/argon-design-system.css?v=1.2.2')}}" rel="stylesheet" />
-        
+        <link href="{{asset('landingpage/css/argon-design-system.css?v=1.2.2')}}" rel="stylesheet" /> --}}
+
         <script src="https://mozilla.github.io/pdf.js/build/pdf.js" crossorigin="anonymous"></script>
         <link href="https://mozilla.github.io/pdf.js/web/viewer.css" rel="stylesheet" type="text/css" />
 
-        
-        
+
+
 
         <!-- Fonts -->
         <!-- Styles -->
@@ -51,8 +51,8 @@
         <div id="app">
             <app-component></app-component>
         </div>
-    
-    <script src="{{mix('js/app.js')}}"></script>
+
+    <script defer src="{{mix('js/app.js')}}"></script>
     <script src="{{asset('assets/js/plugins/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
     <!--   Optional JS   -->
@@ -78,8 +78,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
     {{-- <script src="{{asset('landingpage/js/argon-design-system.js')}}" type="text/javascript"></script> --}}
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-    
-    
+
+
     </body>
 
 

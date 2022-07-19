@@ -24,14 +24,5 @@ class UserTableSeeder extends Seeder
             'address' => 'Bukidnon City',
             'password' => Hash::make('123')
         ]);
-
-        DB::table('users')->insert([
-            'name' => 'jerome',
-            'email' => 'brojeromealtarejos@gmail.com',
-            'user_type' => 'Client',
-            'phone_no' => '090909090909',
-            'address' => 'Bukidnon City',
-            'password' => Hash::make('123')
-        ]);
     }
 }

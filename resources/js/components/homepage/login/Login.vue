@@ -1,5 +1,78 @@
 <template>
-  <div class="mt-3">
+    <v-container>
+        <!-- <v-layout>
+            <div class="d-flex justify-start">
+                <v-btn text @click="$router.push({ name: 'homepage' })">
+                    <v-icon>mdi-arrow-left</v-icon>Back to Home
+                </v-btn>
+            </div>
+        </v-layout> -->
+        <v-layout row justify-center align-center>
+            <v-card max-width="768" flat class="grey lighten-4">
+
+                <!-- Alert Message -->
+                <div v-if="msgStatus">
+                    <alert-component />
+                </div>
+
+                <v-card-text>
+                    <h3 class="text-h5 font-weight-bold text-uppercase grey--text text--darken-4">sign in</h3>
+                    <p class="text-body-2">
+                        Welcome to CMU Archive, please input your
+                        credentials below.
+                    </p>
+                    <v-container class="ma-0">
+                        <v-form ref="form" @submit.prevent="save" v-model="rules.isValid" lazy-validation>
+                            <v-row>
+                                <v-col cols="12" class="px-0">
+                                    <v-text-field v-model="form.email" label="Email"
+                                        prepend-inner-icon="mdi-email" :rules="rules.email" required>
+                                    </v-text-field>
+                                </v-col>
+
+                                <v-col cols="12" class="my-n2 px-0">
+                                    <v-text-field label="Password" v-model="form.password"  dense
+                                        prepend-inner-icon="mdi-lock"
+                                        :append-icon="showpass ? 'mdi-eye' : 'mdi-eye-off'"
+                                        :type="showpass ? 'text' : 'password'" @click:append="showpass = !showpass"
+                                        :rules="rules.password" required>
+                                    </v-text-field>
+                                </v-col>
+                            </v-row>
+                        </v-form>
+                    </v-container>
+
+                    <a class="text-overline text-decoration-none" @click="$router.push({
+                        name: 'authentication',
+                        params: { action: 'forgot-password' },
+                    })">
+                        Forgot password?
+                    </a>
+                </v-card-text>
+
+                <!-- Form Buttons -->
+                <v-card-actions class="px-4">
+                    <v-row>
+                        <v-col cols="12" lg="6">
+                            <v-btn :disabled="!rules.isValid" @click="save"
+                                class="grey darken-4 text-button grey--text text--lighten-5">
+                                sing in
+                            </v-btn>
+                        </v-col>
+                        <v-col cols="12" lg="6">
+                            <v-btn class="text-subtitle-2" text @click="$router.push({
+                                name: 'authentication',
+                                params: { action: 'register' },
+                            })">
+                                Create an Account
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                </v-card-actions>
+            </v-card>
+        </v-layout>
+    </v-container>
+    <!-- <div class="mt-3">
         <v-layout row justify-center align-center>
           <div class="float-left">
             <v-col cols="12" md="3" sm="5">
@@ -9,10 +82,10 @@
             </v-col>
           </div>
         </v-layout>
-        <div class="mt-15"> 
+        <div class="mt-15">
           <v-layout row justify-center align-center>
             <v-card max-width="800">
-              <!-- Alert Message -->
+              Alert Message
               <div v-if="msgStatus">
                 <alert-component />
               </div>
@@ -63,7 +136,7 @@
                 </v-container>
                 <a href="#" @click="$router.push({ name: 'authentication',params:{action:'forgot-password'} })">Forgot password?</a>
               </v-card-text>
-              <!-- Form Buttons -->
+              Form Buttons
 
               <v-card-actions>
                 <v-row>
@@ -88,117 +161,119 @@
             </v-card>
           </v-layout>
         </div>
-  </div>
+  </div> -->
 </template>
 <script>
 import AlertComponent from "./../../AlertComponent.vue";
 import loginInfoGraphic from "../../../../../public/images/authentication.svg";
 export default {
-  components: { AlertComponent },
-  data() {
-    return {
-      loginInfoGraphic: loginInfoGraphic,
-      //Password Property
-      showpassForm: false,
-      showpass: false,
-      showconfirmpass: false,
-      //Error Handlings Property
-      error: "",
-      msgStatus: false,
+    components: { AlertComponent },
+    data() {
+        return {
+            loginInfoGraphic: loginInfoGraphic,
+            //Password Property
+            showpassForm: false,
+            showpass: false,
+            showconfirmpass: false,
+            //Error Handlings Property
+            error: "",
+            msgStatus: false,
 
-      //Form Properties
-      form: {
-        email: "",
-        password: "",
-      },
+            //Form Properties
+            form: {
+                email: "",
+                password: "",
+            },
 
-      //Rules Validation Property
-      rules: {
-        isValid: true,
-        email: [
-          (v) => !!v || "E-mail is required",
-          (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
-        ],
-        password: [(v) => !!v || "Password is required"],
-      },
-    };
-  },
-  computed: {
-    //ISLOADING COMPUTED
-    isLoading: {
-      get: function () {
-        return this.$store.state.base.isLoading;
-      },
+            //Rules Validation Property
+            rules: {
+                isValid: true,
+                email: [
+                    (v) => !!v || "E-mail is required",
+                    (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+                ],
+                password: [(v) => !!v || "Password is required"],
+            },
+        };
+    },
+    computed: {
+        //ISLOADING COMPUTED
+        isLoading: {
+            get: function () {
+                return this.$store.state.base.isLoading;
+            },
 
-      set: function (newVal) {
-        return newVal;
-      },
+            set: function (newVal) {
+                return newVal;
+            },
+        },
     },
-  },
-  methods: {
-    forgotPassword() {
-       this.$router.push({ name: "authentication",params:{action:'forgot-password'} });
-    },
-    redirectToHome() {
-      this.$router.push({ name: "homepage" });
-    },
-    //SAVE FORM
-    redirectRegister() {
-      this.$router.push({ name: "authentication",params:{action:'register'} });
-    },
-    async loginUser() {
-      this.$store.state.base.isLoading = true;
-      await axios.get("/sanctum/csrf-cookie");
+    methods: {
+        forgotPassword() {
+            this.$router.push({ name: "authentication", params: { action: 'forgot-password' } });
+        },
+        redirectToHome() {
+            this.$router.push({ name: "homepage" });
+        },
+        //SAVE FORM
+        redirectRegister() {
+            this.$router.push({ name: "authentication", params: { action: 'register' } });
+        },
+        async loginUser() {
+            this.$store.state.base.isLoading = true;
+            await axios.get("/sanctum/csrf-cookie");
 
-      await axios
-        .post("/api/login", this.form)
-        .then((response) => {
-          localStorage.setItem("token", response.data.token);
-          localStorage.setItem("user_type", response.data.user.user_type);
-          var user_type = response.data.user.user_type;
-          if (user_type === "Chief" || user_type === "Staff") {
-            this.$router.push({ name: "systemdashboard" });
-          } else {
-            this.$router.push({ name: "clientsearch" });
-          }
-        })
-        .catch((err) => {
-          var error = Object.assign({
-            message: err.response.data,
-            status: "Error",
-            show: true,
-            isLoading: false,
-          });
-          this.$store.commit("UPDATE_MESSAGE", error);
-        })
-        .finally(() => {
-          this.$store.commit("UPDATE_LOADING", false);
-        });
+            await axios
+                .post("/api/login", this.form)
+                .then((response) => {
+                    localStorage.setItem("token", response.data.token);
+                    localStorage.setItem("user_type", response.data.user.user_type);
+                    var user_type = response.data.user.user_type;
+                    if (user_type === "Chief" || user_type === "Staff") {
+                        this.$router.push({ name: "systemdashboard" });
+                    } else {
+                        this.$router.push({ name: "clientsearch" });
+                    }
+                })
+                .catch((err) => {
+                    var error = Object.assign({
+                        message: err.response.data,
+                        status: "Error",
+                        show: true,
+                        isLoading: false,
+                    });
+                    this.$store.commit("UPDATE_MESSAGE", error);
+                })
+                .finally(() => {
+                    this.$store.commit("UPDATE_LOADING", false);
+                });
+        },
+        save() {
+            this.msgStatus = true;
+            this.$refs.form.validate();
+            this.loginUser();
+        },
     },
-    save() {
-      this.msgStatus = true;
-      this.$refs.form.validate();
-      this.loginUser();
-    },
-  },
-  created() {
-    this.$root.$refs.Login = this
-  }
+    created() {
+        this.$root.$refs.Login = this
+    }
 };
 </script>
 <style scoped>
 .img {
-  border:1px solid #000;
+    border: 1px solid #000;
 
 }
+
 .right-container {
-  /* background-image:url('../../../../../public/images/authentication.svg'); */
-  background-color: #21c65e;
-  border: 1px solid #000;
+    /* background-image:url('../../../../../public/images/authentication.svg'); */
+    background-color: #21c65e;
+    border: 1px solid #000;
 }
+
 ::v-deep .v-btn {
-  padding-left: 12px;
-  padding-right: 12px;
-  width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
 }
 </style>

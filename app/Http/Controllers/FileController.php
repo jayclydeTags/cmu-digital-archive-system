@@ -54,7 +54,7 @@ class FileController extends Controller
         $request->validate([
             'code' 		         => 	'required|alpha_num',
             'filename' 		     =>     'required|string',
-            'slug' 		         => 	'required|string|max:24',
+            'slug' 		         => 	'required|string',
             'description' 		 =>     'required|string',
             'user_id' 		     =>     'required|numeric',
             'category_id' 		 =>     'required|numeric',

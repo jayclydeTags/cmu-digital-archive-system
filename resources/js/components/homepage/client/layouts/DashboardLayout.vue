@@ -1,11 +1,11 @@
 <template>
     <v-app id="app">
-        
+
         <navigation/>
-        <div class="main-content">
-            
+        <v-main class="grey lighten-3">
+
             <dashboard-content/>
-        </div>
+        </v-main>
 
     </v-app>
 </template>
@@ -33,7 +33,7 @@ export default {
             return this.$store.dispatch("getUser")
         }
 
-        
+
     }
 }
 </script>

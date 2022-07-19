@@ -62,7 +62,8 @@ const getters = {
         return filesfordispose
     },
     filterFilesByCategory: (state) => (category_id) => {
-        return state.file_location.filter(item => item.file_status === 'Approved' && item.archive === 'Unarchive' && item.category_id === category_id)
+        // return state.file_location.filter(item => item.file_status === 'Approved' && item.archive === 'Unarchive' && item.category_id === category_id)
+        return state.file_location.filter(item => item.file_status === 'Approved' && item.archive === 'Unarchive' && item.retention_status !== 'Dispose' && item.category_id === category_id)
     },
     getApprovedDocuments(state) {
         return state.files.filter(item => item.file_status === 'Approved')
