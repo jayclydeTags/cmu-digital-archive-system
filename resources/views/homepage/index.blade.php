@@ -6,9 +6,9 @@
         <meta name="csrf-token" content="{{csrf_token()}}">
 
         <title> CMU | Digital Archiving System </title>
-        <link href="{{ asset('css/app.css')}}" rel="stylesheet">
+        <link href="{{ mix('css/app.css')}}" rel="stylesheet">
         <!-- Favicon -->
-        <link href="{{asset('assets/img/cmulogo.png')}}" rel="icon" type="image/png">
+        <link href="{{ asset('assets/img/cmulogo.png')}}" rel="icon" type="image/png">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -54,7 +54,7 @@
             <app-component></app-component>
         </div>
 
-    <script defer src="{{mix('js/app.js')}}"></script>
+    <script defer src="{{ mix('js/app.js')}}"></script>
     <script src="{{asset('assets/js/plugins/jquery/dist/jquery.min.js')}}"></script>
     {{-- <script src="{{asset('assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script> --}}
     <!--   Optional JS   -->
