@@ -52,7 +52,7 @@ class FileController extends Controller
     private function validation(Request $request)
     {
         $request->validate([
-            'code' 		         => 	'required|alpha_num',
+            'code' 		         => 	'required|alpha_dash',
             'filename' 		     =>     'required|string',
             'slug' 		         => 	'required|string',
             'description' 		 =>     'required|string',

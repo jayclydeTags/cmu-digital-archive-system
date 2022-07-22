@@ -203,6 +203,10 @@
                                                         </span>
                                                     </div>
                                                     <div class="custom-file"> -->
+                                                        <v-alert text type="warning" class="text-body-2">
+                                                        Updating file is not available here. Update the corresponding attachment to the File Location tab.
+                                                    </v-alert>
+
                                                         <label for="exampleFormControlFile1" class="form-label">Upload the corresponding file</label>
                                                     <input
                                                         type="file"

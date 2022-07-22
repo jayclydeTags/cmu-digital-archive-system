@@ -11,7 +11,7 @@
         </v-row>
         <v-row>
             <v-col cols="12" md="6">
-                <system-summary />
+                <system-summary></system-summary>
             </v-col>
             <v-col cols="12" md="6">
                 <upload-chart :chartData="uploadReport" :options="options" />
@@ -91,7 +91,7 @@ export default {
                 labels: daily_date,
                 datasets: [
                     {
-                        label: "Upload Documents",
+                        label: "Requests",
                         backgroundColor: "#FFB74D",
                         data: daily_total,
                     },
@@ -111,12 +111,12 @@ export default {
                 labels: date,
                 datasets: [
                     {
-                        label: "Upload Documents",
+                        label: "Uploads",
                         backgroundColor: "#1E88E5",
                         data: totaluploaded,
                     },
                     {
-                        label: "Archive",
+                        label: "Archived",
                         backgroundColor: "#FFB74D",
                         data: totalarchive,
                     },

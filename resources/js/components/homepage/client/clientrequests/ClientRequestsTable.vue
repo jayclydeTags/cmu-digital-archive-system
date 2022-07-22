@@ -1,5 +1,10 @@
 <template>
     <div>
+        <!-- Alert Message -->
+        <div v-if="msgStatus">
+            <alert-component />
+        </div>
+
         <v-card flat class="mb-2 pa-4 rounded-lg">
             <v-row>
                 <v-col cols="12" sm="6" md="4">
@@ -19,7 +24,12 @@
 
 
             <!-- REQUESTS TABLE -->
-            <v-data-table :headers="headers" :items="fetchRequests" :search="search" class="elevation-1 table-striped">
+            <v-data-table
+                :headers="headers"
+                :items="fetchRequests"
+                :search="search"
+                :loading="isLoading"
+                class="elevation-1 table-striped">
 
 
                 <template v-slot:item.request_date="{ item }">
@@ -63,8 +73,9 @@
 
                                     <!--- GET FILE CONENTS -->
                                     <div v-if="getDocumentRequest" class="text-center" style="position: relative;">
-                                        <web-viewer v-if="getDocumentRequest" :docs.sync="getDocumentRequest"
-                                            :request="selectedRequest" />
+                                        <web-viewer v-if="getDocumentRequest"
+                                            :docs.sync="getDocumentRequest"
+                                            :request="selectedRequest" ></web-viewer>
 
                                     </div>
 
@@ -127,7 +138,7 @@
                     </v-icon> -->
                     <v-btn-toggle v-model="icon" borderless>
                         <v-btn small value="left" color="error" class="ma-1 rounded-sm" @click="deleteItem(item)"
-                        v-show="item.status === 'Pending' || item.status === 'Denied'">
+                        v-show="item.status === 'Pending' || item.status === 'Denied' || item.status === 'Expired' ">
                             <v-icon small class="text-white"> mdi-delete </v-icon>
                         </v-btn>
 
@@ -275,6 +286,7 @@ export default {
         getColor(status) {
             if (status === "Approved") return "green";
             else if (status === 'Denied') return "red";
+            else if (status === 'Expired') return "orange";
             else return "default";
         },
         reloadPage() {

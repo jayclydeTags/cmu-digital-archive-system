@@ -1,4 +1,6 @@
 <template>
+
+
     <div>
         <!-- Alert Message -->
         <div v-if="msgStatus">
@@ -21,7 +23,11 @@
 
         <v-card flat class="rounded-lg">
             <!-- FILES TABLE  -->
-            <v-data-table :headers="headers" :items="fetchDocuments" :search="search" class="table-striped">
+            <v-data-table
+                :headers="headers"
+                :items="fetchDocuments"
+                :search="search"
+                class="table-striped"> -->
                 <!-- CHANGE DATE FORMAT FROM DATABASE -->
                 <template v-slot:item.created_at="{ item }">
                     <span>{{ new Date(item.created_at).toLocaleDateString() }}</span>
@@ -51,8 +57,13 @@
                                         It's recommended to Archive those permanent records.
                                     </v-alert>
                                     <v-form ref="form" @submit.prevent="save">
-                                        <v-select v-model="form.archive" append-icon="mdi-archive" :items="selectItem"
-                                            required select return-object>
+                                        <v-select
+                                            v-model="form.archive"
+                                            append-icon="mdi-archive"
+                                            :items="selectItem"
+                                            required
+                                            select
+                                            return-object>
                                         </v-select>
                                     </v-form>
                                 </v-container>
@@ -82,6 +93,14 @@
             </v-data-table>
         </v-card>
     </div>
+
+
+
+
+
+
+
+
 </template>
 <script>
 import SelectFileCategory from "./../files/SelectFileCategory.vue";
@@ -97,7 +116,7 @@ export default {
             file_id: null,
             selectedFile: null,
             selectedItem: [],
-            selectItem: ["Archived", "Unarchive"],
+            selectItem: ["Archive", "Unarchive"],
 
             //Dialog Property
             dialog: false,

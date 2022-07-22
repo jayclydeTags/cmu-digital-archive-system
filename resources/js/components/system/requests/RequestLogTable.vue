@@ -26,15 +26,8 @@
 
 
             <!-- REQUESTS TABLE -->
-            <v-data-table
-                :headers="headers"
-                v-model="selected"
-                :items="fetchRequests"
-                :search="search"
-                item-key="request_id"
-                :single-select="singleSelect"
-                :loading="isLoading"
-                show-select
+            <v-data-table :headers="headers" v-model="selected" :items="fetchRequests" :search="search"
+                item-key="request_id" :single-select="singleSelect" :loading="isLoading" show-select
                 class="table-striped">
                 <template v-slot:item.request_date="{ item }">
                     <span>{{ new Date(item.request_date).toLocaleDateString() }}</span>
@@ -82,17 +75,20 @@
                                         Confirmation
                                     </v-toolbar-title>
                                 </v-toolbar>
-                                <v-alert outlined type="error" prominent border="left">
-                                    Once this file is archived this cannot be deleted in the system.
-                                    It's recommended those permanent records.
-                                </v-alert>
-                                <v-card-title class="text-h5">Are you sure you want to delete this item(s)?
-                                </v-card-title>
+                                <v-container>
+                                    <v-alert text type="error">
+                                        Are you sure you want to delete this request(s)? This action can will remove all the data in the report request table. <br>
+                                        Are you still sure you want to delete this request?
+                                    </v-alert>
+                                </v-container>
+
+                                <!-- <v-card-title class="text-h5">Are you sure you want to delete this item(s)?
+                                </v-card-title> -->
                                 <v-card-actions>
                                     <v-spacer></v-spacer>
-                                    <v-btn color="info" dark @click="closeDelete">Cancel</v-btn>
-                                    <v-btn color="error" dark :loading="isLoading" @click="deleteItemConfirm">OK</v-btn>
-                                    <v-spacer></v-spacer>
+                                    <v-btn color="error" dark @click="closeDelete">Cancel</v-btn>
+                                    <v-btn color="success" dark :loading="isLoading" @click="deleteItemConfirm">Confirm</v-btn>
+                                    <!-- <v-spacer></v-spacer> -->
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
@@ -128,13 +124,16 @@ export default {
             headers: [
                 {
                     text: "File Name",
-                    value: "filename"},
+                    value: "filename"
+                },
                 {
                     text: "Code",
-                    value: "code"},
+                    value: "code"
+                },
                 {
                     text: "Status",
-                    value: "status"},
+                    value: "status"
+                },
                 {
                     text: "Request Date",
                     value: "request_date"

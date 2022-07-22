@@ -463,7 +463,7 @@ const actions = {
 
             //notifacation
             rootState.base.global = Object.assign({
-                message: [{ success: "Atteched file successfulyy updated" }],
+                message: [{ success: "Atteched file successfully updated" }],
                 status: 'Success',
                 showMsg: true,
             })
