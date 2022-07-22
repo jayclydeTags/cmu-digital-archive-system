@@ -70,10 +70,9 @@
                                         getFile.filetype === 'PNG' ||
                                         getFile.filetype === 'JPG' ||
                                         getFile.filetype === 'JPEG'
-                                    " />
-                                    <embed :src="getFile.filecontent" v-show="
-                                        getFile.filetype === 'pdf' || getFile.filetype === 'PDF'
-                                    " width="100%" height="900" />
+                                    " class="image--size rounded img-fluid img-thumbnail"/>
+                                    <embed :src="getFile.filecontent"
+                                        v-show="getFile.filetype === 'pdf' || getFile.filetype === 'PDF'" width="100%" height="900" />
                                 </div>
                             </v-card>
                         </v-dialog>
@@ -452,5 +451,17 @@ export default {
 <style scoped>
 ::v-deep .v-data-table-header {
     background-color: #4CAF50;
+}
+
+.image--size {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media screen and (min-width: 600px) {
+    .image--size {
+        width: 50%;
+    }
 }
 </style>

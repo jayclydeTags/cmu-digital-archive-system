@@ -1,9 +1,5 @@
 {
     "private": true,
-    "engines": {
-        "node": "16.14.2",
-        "npm": "8.5.0"
-    },
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
@@ -46,6 +42,7 @@
         "minify-css-string": "^1.0.0",
         "pdfjs-dist": "^2.13.216",
         "pdfmake": "^0.2.4",
+        "prod": "^1.0.1",
         "save": "^2.4.0",
         "vue-chartjs": "^3.5.1",
         "vue-html-to-paper": "^1.4.4",

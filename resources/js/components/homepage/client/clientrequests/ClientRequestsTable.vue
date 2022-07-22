@@ -49,6 +49,8 @@
 
                         <!-- REQUEST FILE MANANGEMENT MODAL -->
                         <!-- FILES MANAGEMENT MODALS -->
+
+                        <!-- VIEW FILE CONTENT -->
                         <v-row justify="center">
                             <v-dialog v-model="viewdialog" fullscreen hide-overlay transition="dialog-bottom-transition"
                                 persistent>
@@ -58,12 +60,14 @@
                                             <v-icon>mdi-close</v-icon>
                                         </v-btn>
                                     </v-toolbar>
+
                                     <!--- GET FILE CONENTS -->
-                                    <div v-if="getDocumentRequest" class="text-center">
+                                    <div v-if="getDocumentRequest" class="text-center" style="position: relative;">
                                         <web-viewer v-if="getDocumentRequest" :docs.sync="getDocumentRequest"
                                             :request="selectedRequest" />
 
                                     </div>
+
                                 </v-card>
                             </v-dialog>
                         </v-row>

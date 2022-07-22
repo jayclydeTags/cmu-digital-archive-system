@@ -56,7 +56,7 @@ class FileLocationController extends Controller
     private function validation(Request $request)
     {
         $request->validate([
-            'file_location'         =>     'required|mimes:png,jpg,jpeg,pdf|max:2048',
+            'file_location'         =>     'required|mimes:png,jpg,jpeg,pdf',
             'file_id'                 =>  'required|numeric',
         ]);
     }
